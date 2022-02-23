@@ -71,7 +71,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("pavucontrol") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("brave") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave --incognito") },
-	{ MODKEY,                       XK_v,      spawn,          SHCMD("virtualbox") },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager") },
         //{ 0,                            XF86XK_MonBrightnessDown, spawn,   SHCMD("light -U 10") },
         //{ 0,                            XF86XK_MonBrightnessUp,   spawn,   SHCMD("light -A 10") },
         { MODKEY,                       XK_F5,     spawn,           SHCMD("light -U 10") },
