@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -65,20 +64,13 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("st tmux a") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("pavucontrol") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("brave") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave --incognito") },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager") },
-        //{ 0,                            XF86XK_MonBrightnessDown, spawn,   SHCMD("light -U 10") },
-        //{ 0,                            XF86XK_MonBrightnessUp,   spawn,   SHCMD("light -A 10") },
-        { MODKEY,                       XK_F5,     spawn,           SHCMD("light -U 10") },
-        { MODKEY,                       XK_F6,     spawn,           SHCMD("light -A 10") },
-        { MODKEY,                       XK_F1,     spawn,           SHCMD("mac toggle") },
-        { MODKEY,                       XK_F2,     spawn,           SHCMD("mac down") },
-        { MODKEY,                       XK_F3,     spawn,           SHCMD("mac up") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
