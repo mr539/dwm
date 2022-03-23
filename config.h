@@ -32,9 +32,9 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
@@ -72,6 +72,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("brave") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("brave --incognito") },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager") },
+        { 0,         XF86XK_MonBrightnessDown,     spawn,          SHCMD("/home/mr/bin/br -4600") },
+	{ 0,         XF86XK_MonBrightnessUp,       spawn,          SHCMD("/home/mr/bin/br 4600") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
