@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"Hack Nerd Font:size=11", "EmojiOneColor:size=11:antialias=true:autohint=true" };
-static const char dmenufont[]       = "hack:size=10";
+static const char *fonts[]          = {"Hack Nerd Font:size=11:size=11:antialias=true:autohint=true" };
+static const char dmenufont[]       = "hack:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -74,7 +74,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager") },
         { 0,         XF86XK_MonBrightnessDown,     spawn,          SHCMD("/home/mr/bin/br -4600") },
 	{ 0,         XF86XK_MonBrightnessUp,       spawn,          SHCMD("/home/mr/bin/br 4600") },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
