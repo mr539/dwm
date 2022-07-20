@@ -6,7 +6,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"Terminus:size=11:size=11:antialias=true:autohint=true" };
-static const char dmenufont[]       = "hack:size=11";
+static const char dmenufont[]       = "Terminus:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -65,7 +65,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_BackSpace, spawn,       {.v = termcmd } },
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("tmaster") },
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("/home/martin/.scripts/tmaster") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox") },
