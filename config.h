@@ -64,7 +64,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_BackSpace, spawn,       {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("tmaster") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox") },
