@@ -12,6 +12,7 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -91,6 +92,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+
+	TAGKEYS(                        XK_parenleft,                      0)
+	TAGKEYS(                        XK_parenright,                      1)
+	TAGKEYS(                        XK_braceright,                      2)
+	TAGKEYS(                        XK_plus,                      3)
+	TAGKEYS(                        XK_braceleft,                      4)
+	TAGKEYS(                        XK_bracketright,                      5)
+	TAGKEYS(                        XK_bracketleft,                      6)
+	TAGKEYS(                        XK_exclam,                      7)
+	TAGKEYS(                        XK_equal,                      8)
+	{ MODKEY|ShiftMask,             XK_BackSpace,      quit,           {0} },
+
+	/*
 	TAGKEYS(                        XK_ampersand,                      0)
 	TAGKEYS(                        XK_bracketleft,                      1)
 	TAGKEYS(                        XK_braceleft,                      2)
@@ -101,6 +115,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_parenright,                      7)
 	TAGKEYS(                        XK_plus,                      8)
 	{ MODKEY|ShiftMask,             XK_bracketright,      quit,           {0} },
+	*/
 };
 
 /* button definitions */
