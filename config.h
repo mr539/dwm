@@ -64,13 +64,17 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ 0,                            XK_Menu,  spawn,          SHCMD("flameshot gui") },
+	{ 0,                            XK_Menu,   spawn,          SHCMD("flameshot gui") },
+	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_BackSpace, spawn,       {.v = termcmd } },
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("tmaster") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("firefox --private-window") },
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("anki") },
+	/*{ MODKEY,                       XF86MonBrightnessUp,      spawn,          SHCMD("doas br +1000") },
+	{ MODKEY,                       XF86MonBrightnessDown,      spawn,          SHCMD("doas br s1000") },*/
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
