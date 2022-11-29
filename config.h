@@ -30,6 +30,8 @@ static const Rule rules[] = {
 /*	class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ NULL,       NULL,      "termfloat", 0,            1,           -1 },
+	{ NULL,       NULL,      "Volume Control", 0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -67,7 +69,9 @@ static Key keys[] = {
 	{ 0,                            XK_Menu,   spawn,          SHCMD("flameshot gui") },
 	{ 0,                            XK_Print,  spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_BackSpace, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_BackSpace, spawn,          SHCMD("st -T 'termfloat'") },
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("tmaster") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st -T 'termfloat' tmux a -t master") },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("pavucontrol") },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("slock") },
@@ -77,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("brave") },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("brave --incognito") },
 	{ MODKEY,                       XK_a,      spawn,          SHCMD("anki") },
+	{ MODKEY,                       XK_g,      spawn,          SHCMD("geogebra") },
 	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -84,14 +89,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_z,      zoom,  {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_space,  togglefloating,           {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -108,20 +113,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_bracketleft,                      6)
 	TAGKEYS(                        XK_exclam,                      7)
 	TAGKEYS(                        XK_equal,                      8)
-	{ MODKEY|ShiftMask,             XK_BackSpace,      quit,           {0} },
 
-	/*
-	TAGKEYS(                        XK_ampersand,                      0)
-	TAGKEYS(                        XK_bracketleft,                      1)
-	TAGKEYS(                        XK_braceleft,                      2)
-	TAGKEYS(                        XK_braceright,                      3)
-	TAGKEYS(                        XK_parenleft,                      4)
-	TAGKEYS(                        XK_equal,                      5)
-	TAGKEYS(                        XK_asterisk,                      6)
-	TAGKEYS(                        XK_parenright,                      7)
-	TAGKEYS(                        XK_plus,                      8)
-	{ MODKEY|ShiftMask,             XK_bracketright,      quit,           {0} },
-	*/
+	{ MODKEY|ShiftMask,             XK_Delete,      quit,           {0} },
 };
 
 /* button definitions */
