@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"Terminus:size=11:size=11:antialias=true:autohint=true" };
+static const char *fonts[]          = {"Terminus:size=11:antialias=false:autohint=false" };
 static const char dmenufont[]       = "Terminus:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -104,6 +104,16 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
+	TAGKEYS(                        XK_ampersand,                        0)
+	TAGKEYS(                        XK_bracketleft,                      1)
+	TAGKEYS(                        XK_braceleft,                        2)
+	TAGKEYS(                        XK_braceright,                       3)
+	TAGKEYS(                        XK_parenleft,                        4)
+	TAGKEYS(                        XK_equal,                            5)
+	TAGKEYS(                        XK_asterisk,                         6)
+	TAGKEYS(                        XK_parenright,                       7)
+	TAGKEYS(                        XK_plus,                             8)
+	/*
 	TAGKEYS(                        XK_parenleft,                      0)
 	TAGKEYS(                        XK_parenright,                      1)
 	TAGKEYS(                        XK_braceright,                      2)
@@ -113,6 +123,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_bracketleft,                      6)
 	TAGKEYS(                        XK_exclam,                      7)
 	TAGKEYS(                        XK_equal,                      8)
+	*/
 
 	{ MODKEY|ShiftMask,             XK_Delete,      quit,           {0} },
 };
